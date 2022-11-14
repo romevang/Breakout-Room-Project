@@ -12,10 +12,10 @@ Used Socket.IO https://socket.io/docs/v4/ library.
 
 All the files must be in the same directory. To test do the following:
 
--Set your terminal/Command prompt to point to the project directory (you can do this within VS code as well).
+	--Set your terminal/Command prompt to point to the project directory (you can do this within VS code as well).
 
--Type: node index.js (leave terminal/command prompt window open).
+	--Type: node index.js (leave terminal/command prompt window open).
 
--Navigate with your browser to localhost:3000/
+	--Navigate with your browser to localhost:3000/
 
--Chat window should load, and you'll be able to send and echo back those messages.
+	--Chat window should load, and you'll be able to send and echo back those messages.
