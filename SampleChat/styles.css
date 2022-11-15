@@ -1,0 +1,48 @@
+ul,li {
+    list-style-type:none;
+    padding-bottom:1em;
+    width: 500px;
+}
+
+
+
+#userList, #chatBody {
+   margin: auto;
+}
+
+#title {
+    /*margin: auto;*/
+    text-align: center;
+}
+#user_input {
+    width: 25rem;
+    height: 8rem;
+}
+
+#userList {
+   /* list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    text-align:end;*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    text-align: center;
+
+    /*width: 25%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;*/
+}
+
+#chatBody, #userList {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#Send{
+    background: #333; border: none; padding: 1rem;  border-radius: 9px; outline: none; color: #fff; height: 50px;
+}

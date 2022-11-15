@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+    <script>src="jquery-3.6.1.js"</script>
+    <title>Blog page</title>
+  </head>
+  <body>
+    <div id="title">
+      <h1>Simple Chat Room</h1>
+    </div>
+    <!--chat messages-->
+    <ul id="chatBody">
+      <li>Hello chat.</li>
+      <li>Oh hai der</li>
+      <!--Blog Entry-->     
+      <form class="" action="index.html" method="post">
+        <label for="user_input">Message/Body:</label><br>
+          <textarea id="user_input" name="user_input"></textarea>
+          <input id="Send" type="button" value="Send" onclick="submitPost()"><br><br>
+          <!-- removes the selected blog post-->
+          <label for="input">Enter the blog entry to remove:</label><br>
+          <input type="number" id="input" name="user_post">
+          <input type="button" value="Submit" onclick="deletePost()">
+      </form>
+    </ul>
+    <script src="script.js"></script>
+  </body>
+</html>
