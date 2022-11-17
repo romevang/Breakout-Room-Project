@@ -52,7 +52,8 @@ function deletePost() {
 }
 
 document.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
+  if (['Enter', 'NumpadEnter'].includes(event.key)) {
+    //Includes both Enter key and Number pad Enter =)
     submitPost();
   }
 });
