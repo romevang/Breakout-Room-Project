@@ -50,6 +50,11 @@ function deletePost() {
 
 }
 
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    submitPost();
+  }
+});
 
 //Eric -> Calculates the width so that the display is correct for the bubbles
 function calcWidth(doc) {
