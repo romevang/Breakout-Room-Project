@@ -27,6 +27,7 @@ function submitPost() {
   //takes the current top entry 'topBlogEntry' and moves it down to the next slot
   //newBlogEntry becomes the top most recent post
   blogList.insertBefore(newBlogEntry, topBlogEntry);
+  document.getElementById("user_input").value = "";
 }
 
 function deletePost() {
