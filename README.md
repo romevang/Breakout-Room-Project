@@ -2,6 +2,7 @@
 CSCi156 websocket/chat/breakout room project
 
 The folder testServer is the python implementation of the server side. It works but it only writes to console.log, not needed at the moment for testing.
+
 The folder SampleChat is a simple chat box. It only posts on client side, there's no socket/server components attached to it yet, it needs to be integrated to the python server. The server and client will both use the Socket.IO framework once completed. 
 
 
