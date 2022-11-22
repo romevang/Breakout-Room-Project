@@ -5,8 +5,9 @@ The folder testServer is the python implementation of the server side. It works 
 
 The folder SampleChat is a simple chat box. It only posts on client side, there's no socket/server components attached to it yet, it needs to be integrated to the python server. The server and client will both use the Socket.IO framework once completed. 
 
+Using one of socket.io's tutorials, there's a working frontend/backend implentation of realtime chat using a node.js server. You'll use all the files that are not in folders (exclude SampleChat and testServer these are not needed for demo): 
 
-If you want to run it as is:
+To run it as is:
 node.js is needed to run the server side components (only temporary).
 https://nodejs.org/en/
 
