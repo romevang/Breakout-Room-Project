@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <script>
+        const roomName = "<%= roomName%>"; //Creates the newRoom
+    </script>
+    <script src = "http://localhost:3000/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <!--
+        Modified to ejs file
+
+        This is where all the data will be stored-->
+    <div id = "messageContainer"></div>
+
+    <!--This is the form that we use to send messages-->
+    <form id = "sendMessage">
+        <input type = "text" id = "messageInput">
+        <button type = "submit" id = "sendButton">Send</button>
+    </form>
+    <script src = "script.js"></script>
+</body>
+</html>
