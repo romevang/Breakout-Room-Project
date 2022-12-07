@@ -43,7 +43,7 @@ app.get('/:room', (req, res) => {
     res.render('room', {roomName: req.params.room}); //This will get the room
 })
 
-server.listen(3000);
+server.listen(8080);
 
 //This will contain all the users and their server ids and change it into their names
 
@@ -94,4 +94,9 @@ function getUserRooms(socket){
         return names;
     }, []);
 }
-//adding npm i express ejs
+/*
+In order to run this program:
+    In the terminal, run the command "npm run devStart"
+    Inside of a browser, you should be able to search up "localhost:3000"
+        This should show the entire and can be ran through there.
+*/

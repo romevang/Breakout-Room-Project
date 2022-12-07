@@ -1,5 +1,5 @@
 //Where server is hosting --> Location
-const socket = io("http://localhost:3000", { transports: ['websocket'] });
+const socket = io("http://184.169.217.31:8080", { transports: ['websocket'] });
 
 //This is changing the html
 const messageContainer = document.getElementById("messageContainer")
