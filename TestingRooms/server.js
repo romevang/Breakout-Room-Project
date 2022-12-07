@@ -94,6 +94,7 @@ function getUserRooms(socket){
         return names;
     }, []);
 }
+//adding npm i express ejs
 /*
 In order to run this program:
     In the terminal, run the command "npm run devStart"
