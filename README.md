@@ -1,5 +1,5 @@
 # Breakout-Room-Project
-## CSCi156 websocket/chat/breakout room project
+## California State University Fresno State - CSCi156 websocket/chat/breakout room project
 
 The folder "156Submission" includes the working product. Its really rudementary but it is functional. Two things to be aware of is: 
 
