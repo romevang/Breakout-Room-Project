@@ -12,7 +12,13 @@ app.use(express.static('public')); //This is a new folder that we will place the
 app.use(express.urlencoded({extended: true})); //Allows use of url body instead of form.
 
 //Initializing the rooms this will follow a JSON format. "name" is a key: {name: {}}
-const rooms = {};
+const rooms = {"Public 1" : {users: {}},
+               "Public 2" : {users: {}},
+               "Public 3" : {users: {}},
+               "Public 4" : {users: {}},
+               "Public 5" : {users: {}}};
+const users = {};
+
 
 app.get('/', (req, res) => {
     res.render('index', {rooms: rooms});//Adding a new room to the rooms
@@ -20,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.post('/room', (req, res) => {
     if(rooms[req.body.room] != null){
-        return res.redirect('/'); //Return to the room with a nae if it exists
+        return res.redirect('/'); //Return to the room with a name if it exists
     }
     rooms[req.body.room] = {users: {}}; //"room" is the name of the room
     res.redirect(req.body.room); //Sends us to the new room
@@ -37,7 +43,7 @@ app.get('/:room', (req, res) => {
     res.render('room', {roomName: req.params.room}); //This will get the room
 })
 
-server.listen(3000);
+server.listen(8080);
 
 //This will contain all the users and their server ids and change it into their names
 
@@ -50,11 +56,18 @@ io.on('connection', socket => {
         rooms[room].users[socket.id] = name; //The name input is the name that we are given
         socket.broadcast.to(room).emit('userConnected', name); //Do "userConnected" function
     })
+    socket.on('newUserLobby', name => {
+        users[socket.id] = name; //The name input is the name that we are given
+        socket.broadcast.emit('userConnectedLobby', name); //Do "userConnected" function
+    })
 
     //This will send the an array of the message and of who sent what.
     socket.on('sendChatMessage', (room, message) => {
         //chatMessage will basically tell the client side to show the message
         socket.broadcast.to(room).emit("chatMessage", {message: message, name: rooms[room].users[socket.id]});
+    })
+    socket.on('sendLobbyChatMessage', (message) => {
+        socket.broadcast.emit("lobbyChatMessage", {message: message, name: users[socket.id]});
     })
     //This does exactly what creating a new user does but checks to see if the user has left
     socket.on('disconnect', () => {
@@ -62,6 +75,13 @@ io.on('connection', socket => {
             //This will tell the other people that a person has left
             socket.broadcast.to(room).emit("userDisconnected", rooms[room].users[socket.id]);
             delete rooms[room].users[socket.id]; //We have to delete the user from the users list.
+        })
+    })
+
+    socket.on('disconnectLobby', () => {
+        getUserRooms(socket).forEach(room => {
+            socket.broadcast.emit("userDisconnectedLobby", users[socket.id]);
+            delete users[socket.id]; //We have to delete the user from the users list.
         })
     })
 });
@@ -74,15 +94,10 @@ function getUserRooms(socket){
         return names;
     }, []);
 }
+//adding npm i express ejs
 /*
-adding npm i express ejs
-Things to add to SETTINGS.JSON
-    "files.associations": {
-        "*.ejs": "html"
-    },
-    "emmet.includeLanguages": {
-        "ejs": "html",
-    },
-    "html.format.templating": true
-
+In order to run this program:
+    In the terminal, run the command "npm run devStart"
+    Inside of a browser, you should be able to search up "localhost:3000"
+        This should show the entire and can be ran through there.
 */
