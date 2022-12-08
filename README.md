@@ -1,24 +1,37 @@
 # Breakout-Room-Project
 CSCi156 websocket/chat/breakout room project
 
-The folder testServer is the python implementation of the server side. It works but it only writes to console.log, not needed at the moment for testing.
+The folder "156Submission" includes the working product. Its really rudementary but it is functional. Two things to be aware of is: 
 
-The folder SampleChat is a simple chat box. It only posts on client side, there's no socket/server components attached to it yet, it needs to be integrated to the python server. The server and client will both use the Socket.IO framework once completed. 
+1) There's no persistent state, upon switching rooms or reloading, you'll have to re-enter your username.
+2) You can use the 'empty' string (Two spaces) for a user name.
 
-Using one of socket.io's tutorials, there's a working frontend/backend implentation of realtime chat using a node.js server. You'll use all the files that are not in folders (exclude SampleChat and testServer these are not needed for demo): 
-
-To run it as is:
-node.js is needed to run the server side components (only temporary).
+Server side requires: node.js 
 https://nodejs.org/en/
 
-Used Socket.IO https://socket.io/docs/v4/ library.
+Used Socket.IO https://socket.io/docs/v4/ libraries.
 
-All the files must be in the same directory. To test do the following:
+install NPM:
+In windows via the installer page on the nodejs.org website
+Linux/Mac OS use either your package manager of choice or brew on Mac OS.
 
-	--Set your terminal/Command prompt to point to the project directory (you can do this within VS code as well).
+Once NPM (node package manager) is installed, in your linux/Mac OS terminal or your command prompt (windows) run these two commands.
 
-	--Type: node index.js (leave terminal/command prompt window open).
+npm install -g nodemon
+npm install --save-dev nodemon
 
-	--Navigate with your browser to localhost:3000/
+To ensure proper operation, edit the script.js file inside the folder labeled 'public.' On line two change the URL to indicate the location of your server, for example if ran locally then use: 
 
-	--Chat window should load, and you'll be able to send and echo back those messages.
+const socket = io("localhost:Port_Number/", { transports: ['websocket'] });
+
+
+Ensure your terminal/command prompt directory is pointed to the 156Submission folder (usually done with the "cd" command)
+inside the 156Submission folder run:
+
+npm run devStart
+
+Keep terminal window open and the server will start listening for connections. 
+
+
+
+
