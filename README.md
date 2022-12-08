@@ -42,7 +42,7 @@ inside the **156Submission** folder run:
 ```
 npm run devStart
 ```
-Keep terminal window open and the server will start listening for connections. Via your web browser, type the address specified above: ```localhost:8080/``` as an example and your room should load. 
+Keep terminal window open and the server will start listening for connections. Via your web browser, type the address specified above: ```http://localhost:8080/``` as an example and your room should load. 
 
 
 
