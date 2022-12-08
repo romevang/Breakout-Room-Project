@@ -18,7 +18,7 @@ https://nodejs.org/en/
 
 In windows via the installer page on the nodejs.org website (https://nodejs.org/en/).
 
-Linux/Mac OS use either your package manager of choice or brew on Mac OS (Mac OS users can also go to the NodeJS website linked above).
+On Linux/unix use either your package manager of choice or if on Mac OS use https://brew.sh/ (Mac OS users can also go to the NodeJS website linked above and get the package directly).
 
 **install nodemon:**
 
