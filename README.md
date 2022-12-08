@@ -32,7 +32,7 @@ npm install --save-dev nodemon
 
 To ensure proper operation, edit the script.js file inside the folder in **156Submission/public.** (See below) On line 2, you'll need to change the URL to indicate the location of your server, for example if ran locally then use: 
 ```
-const socket = io("localhost:Almost_Any_Port_Number/", { transports: ['websocket'] });
+const socket = io("http://localhost:Almost_Any_Port_Number/", { transports: ['websocket'] });
 ```
 
 Ensure your terminal/command prompt directory is pointed to the root of the **156Submission** folder (usually done with the "cd" command)
