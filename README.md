@@ -12,12 +12,13 @@ https://nodejs.org/en/
 **Used Socket.IO https://socket.io/docs/v4/ libraries.**
 
 --------------------------------------------------------------------
-### Installation instructions
+### Installation instructions:
 
-**install NPM:**
+**To install NPM you'll need to install node.js framework:**
 
-In windows via the installer page on the nodejs.org website
-Linux/Mac OS use either your package manager of choice or brew on Mac OS.
+In windows via the installer page on the nodejs.org website (https://nodejs.org/en/).
+
+Linux/Mac OS use either your package manager of choice or brew on Mac OS (Mac OS users can also go to the NodeJS website linked above).
 
 **install nodemon:**
 
@@ -29,9 +30,9 @@ npm install --save-dev nodemon
 
 **Edit script.js:**
 
-To ensure proper operation, edit the script.js file inside the folder in **156Submission/public.** (See below) On line two change the URL to indicate the location of your server, for example if ran locally then use: 
+To ensure proper operation, edit the script.js file inside the folder in **156Submission/public.** (See below) On line 2, you'll need to change the URL to indicate the location of your server, for example if ran locally then use: 
 ```
-const socket = io("localhost:Port_Number/", { transports: ['websocket'] });
+const socket = io("localhost:Almost_Any_Port_Number/", { transports: ['websocket'] });
 ```
 
 Ensure your terminal/command prompt directory is pointed to the root of the **156Submission** folder (usually done with the "cd" command)
@@ -41,7 +42,7 @@ inside the **156Submission** folder run:
 ```
 npm run devStart
 ```
-Keep terminal window open and the server will start listening for connections. 
+Keep terminal window open and the server will start listening for connections. Via your web browser, type the address specified above: ```localhost:8080/``` as an example and your room should load. 
 
 
 
